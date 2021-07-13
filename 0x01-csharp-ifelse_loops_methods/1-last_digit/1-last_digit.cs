@@ -9,7 +9,7 @@ class Program
         int last = number % 10;
         Console.Write("The last digit of {0} is {1} ", number, last);
         if (last == 0)
-            Console.WriteLine("and is zero");
+            Console.WriteLine("and is 0");
         else if (last < 6)
             Console.WriteLine("and is less than 6 and not 0");
         else
