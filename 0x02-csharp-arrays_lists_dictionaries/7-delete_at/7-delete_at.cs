@@ -10,7 +10,7 @@ class List{
         }
         for(int i = myList.Count - 1; i >= 0; i--){
             if(i == index)
-                myList.Remove(i + 1);
+                myList.Remove(myList[i]);
         }
         return myList;
     }
