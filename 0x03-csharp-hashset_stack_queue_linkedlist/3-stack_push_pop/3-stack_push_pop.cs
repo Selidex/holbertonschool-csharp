@@ -8,7 +8,7 @@ class MyStack{
             System.Console.WriteLine("Stack is empty");
         else
             System.Console.WriteLine("Top item: {0}", aStack.Peek());
-        System.Console.WriteLine("Stack contains {0}: {1}", search, aStack.Contains(search));
+        System.Console.WriteLine("Stack contains \"{0}\": {1}", search, aStack.Contains(search));
         if(aStack.Contains(search)){
             var k = "";
             while(k != search)
