@@ -10,9 +10,10 @@ class MyStack{
             System.Console.WriteLine("Top item: {0}", aStack.Peek());
         System.Console.WriteLine("Stack contains {0}: {1}", search, aStack.Contains(search));
         if(aStack.Contains(search)){
-            while(aStack.Peek() != search)
-                aStack.Pop();
-            aStack.Pop();
+            var k = "";
+            while(k != search)
+                k = aStack.Pop();
+            
         }
         aStack.Push(newItem);
         return aStack;
