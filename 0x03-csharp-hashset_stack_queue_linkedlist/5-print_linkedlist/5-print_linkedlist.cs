@@ -4,7 +4,6 @@ using System.Collections.Generic;
 class LList{
     public static LinkedList<int> CreatePrint(int size){
         if(size <= 0){
-            Console.Write("\n");
             return new LinkedList<int>();
         }
         LinkedList<int> lList = new LinkedList<int>();
