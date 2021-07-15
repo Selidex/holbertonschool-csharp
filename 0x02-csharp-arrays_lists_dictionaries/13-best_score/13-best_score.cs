@@ -5,7 +5,7 @@ class Dictionary{
     public static string BestScore(Dictionary<string, int> myList){
         if(myList.Count == 0 || myList == null)
             return "None";
-        int maxv = 0;
+        int maxv = -1;
         string maxk = "";
         foreach(KeyValuePair<string, int> entry in myList)
         {
