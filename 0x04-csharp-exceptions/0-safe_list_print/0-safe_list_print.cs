@@ -9,7 +9,7 @@ class List{
                 System.Console.WriteLine(myList[i]);
                 count++;
             }
-            catch(ArgumentOutOfRangeException e){
+            catch(ArgumentOutOfRangeException){
                 break;
             }
         }
