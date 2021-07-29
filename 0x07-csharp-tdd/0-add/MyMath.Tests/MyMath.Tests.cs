@@ -4,15 +4,11 @@ namespace MyMath.Tests
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            result = Operations.Add(1,2);
+            Assert.AreEqual(reult, 3);
         }
     }
 }
