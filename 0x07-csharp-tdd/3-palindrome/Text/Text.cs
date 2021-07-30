@@ -19,6 +19,8 @@ namespace Text
                     return true;
                 if(s[i] != s[k])
                     return false;
+                i++;
+                k--;
             }
             return true;
 
