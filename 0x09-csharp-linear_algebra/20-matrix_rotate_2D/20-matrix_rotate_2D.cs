@@ -8,10 +8,10 @@ class MatrixMath{
         if (angle == 0)
             return matrix;
         double[,] ret = new double[2,2];
-        ret[0,0] = Math.Round((matrix[0,0] * Math.Cos(angle)) - (matrix[0,1] * Math.Sin(angle)), 2);
-        ret[0,1] = Math.Round((matrix[0,0] * Math.Sin(angle)) + (matrix[0,1] * Math.Cos(angle)), 2);
-        ret[1,0] = Math.Round((matrix[1,0] * Math.Cos(angle)) - (matrix[1,1] * Math.Sin(angle)), 2);
-        ret[1,1] = Math.Round((matrix[1,0] * Math.Sin(angle)) + (matrix[1,1] * Math.Cos(angle)), 2);
+        ret[0,0] = Math.Round((matrix[0,0] * Math.Cos(angle)), 2) - Math.Round((matrix[0,1] * Math.Sin(angle)), 2);
+        ret[0,1] = Math.Round(Math.Round((matrix[0,0] * Math.Sin(angle)), 2) + Math.Round((matrix[0,1] * Math.Cos(angle)), 2), 2);
+        ret[1,0] = Math.Round((matrix[1,0] * Math.Cos(angle)), 2) - Math.Round((matrix[1,1] * Math.Sin(angle)), 2);
+        ret[1,1] = Math.Round((matrix[1,0] * Math.Sin(angle)), 2) + Math.Round((matrix[1,1] * Math.Cos(angle)), 2);
         return ret;
     }
 }
