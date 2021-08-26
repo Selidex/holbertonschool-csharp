@@ -12,7 +12,7 @@ class MatrixMath{
             for (int j = 0; j < ret.GetLength(1); j++){
                 for (int x = 0; x < matrix1.GetLength(0); x++)
                     v1[x] = matrix1[i, x];
-                for (int y = 0; i < matrix2.GetLength(1); y++)
+                for (int y = 0; y < matrix2.GetLength(1); y++)
                     v2[y] = matrix2[y, j];
                 ret[i, j] = DotProduct(v1, v2);
             }
