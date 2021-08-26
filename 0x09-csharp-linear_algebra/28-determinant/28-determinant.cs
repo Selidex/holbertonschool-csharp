@@ -7,7 +7,8 @@ class MatrixMath{
         if( (x != y) || (x != 2 && x != 3))
             return -1;
         if (x == 2){
-            return (matrix[0,0] * matrix[1, 1]) - (matrix[1, 0] * matrix[0,1]);
+            double ans = (matrix[0,0] * matrix[1, 1]) - (matrix[1, 0] * matrix[0,1]);
+            return Math.Round(ans, 2);
         }
         else {
             double aei = matrix[0,0] * matrix[1,1] * matrix[2,2];
@@ -17,7 +18,8 @@ class MatrixMath{
             double bdi = matrix[1,0] * matrix[0,1] * matrix[2,2];
             double ceg = matrix[2,0] * matrix[1,1] * matrix[0,2];
 
-            return aei + bfg + cdh - afh - bdi - ceg;
+            double ans = aei + bfg + cdh - afh - bdi - ceg;
+            return Math.Round(ans, 2);
 
         }
     }
