@@ -9,10 +9,10 @@ class MatrixMath{
         if (x == 0)
             return new double[,]{{-1}};
         double[,] ret = new double[2,2];
-        ret[0,0] = matrix[1,1] / x;
-        ret[0,1] = matrix[0,1] / -x;
-        ret[1,0] = matrix[1,0] / -x;
-        ret[1,1] = matrix[0,0] / x;
+        ret[0,0] = Math.Round(matrix[1,1] / x, 2);
+        ret[0,1] = Math.Round(matrix[0,1] / -x, 2);
+        ret[1,0] = Math.Round(matrix[1,0] / -x, 2);
+        ret[1,1] = Math.Round(matrix[0,0] / x, 2);
         return ret;
         
     }
