@@ -12,6 +12,6 @@ class MatrixMath{
                 ret[i,j] = matrix2[i, j] + matrix1[i, j];
             }
         }
-        return matrix1;
+        return ret;
     }
 }
