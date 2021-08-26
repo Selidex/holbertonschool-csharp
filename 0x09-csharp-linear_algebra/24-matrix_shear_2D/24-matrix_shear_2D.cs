@@ -3,19 +3,19 @@ using System.Collections.Generic;
 
 class MatrixMath{
     public static double[,] Shear2D(double[,] matrix, char direction, double factor){
-        if(matrix.GetLength(1) != 2 || matrix.GetLength(0) != 2 || (direction != "x" && direction != "y"))
+        if(matrix.GetLength(1) != 2 || matrix.GetLength(0) != 2 || (!direction.Equals('x') && !direction.Equals('y')))
             return new double[,] {{-1}};
         double[,] ret = new double[2,2];
         double[,] t = new double[2,2];
         t[0,0] = 1;
         t[1,1] = 1;
-        if (direction == "x"){
-            t[0,1] = factor;
-            t[1,0] = 0;
-        }         
-        if (direction == "y"){
+        if (direction.Equals('x')){
             t[0,1] = 0;
             t[1,0] = factor;
+        }         
+        if (direction.Equals('y')){
+            t[0,1] = factor;
+            t[1,0] = 0;
         }
         return Multiply(matrix, t);
     }
