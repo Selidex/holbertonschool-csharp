@@ -3,17 +3,19 @@ using System.Collections.Generic;
 
 class MatrixMath{
     public static double[,] Multiply(double[,] matrix1, double[,] matrix2){
-        if (matrix1.GetLength(0) != matrix2.GetLength(1))
+        if (matrix1.GetLength(1) != matrix2.GetLength(0)){
             return new double[,] {{-1}};
+        }
         double[,] ret = new double[matrix1.GetLength(0),matrix2.GetLength(1)];
-        double[] v1 = new double[matrix1.GetLength(0)];
-        double[] v2 = new double[matrix2.GetLength(1)];
+        double[] v1 = new double[matrix1.GetLength(1)];
+        double[] v2 = new double[matrix2.GetLength(0)];
         for (int i = 0; i < ret.GetLength(0); i++){
             for (int j = 0; j < ret.GetLength(1); j++){
-                for (int x = 0; x < matrix1.GetLength(0); x++)
+                for (int x = 0; x < matrix1.GetLength(1); x++)
                     v1[x] = matrix1[i, x];
-                for (int y = 0; y < matrix2.GetLength(1); y++)
+                for (int y = 0; y < matrix2.GetLength(0); y++){
                     v2[y] = matrix2[y, j];
+                }
                 ret[i, j] = DotProduct(v1, v2);
             }
         }
