@@ -33,13 +33,13 @@ class Door : Base, IInteractive{
 class Decoration : Base, IInteractive, IBreakable{
     public bool isQuestItem;
     public int durability{get; set;}
-    public Decoration(string vn="Decoration", int vd=1, bool vq=false){
-        this.name = vn;
-        if(vd < 1){
+    public Decoration(string name="Decoration", int durability=1, bool isQuestItem=false){
+        this.name = name;
+        if(durability < 1){
             throw new ArgumentException("Durability must be greater than 0");
         }
-        durability = vd;
-        isQuestItem = vq;
+        this.durability = durability;
+        this.isQuestItem = isQuestItem;
     }
     public void Interact(){
         if(durability < 1){
