@@ -21,7 +21,7 @@ interface ICollectable{
     void Collect();
 }
 
-class TestObject : Base, ICollectable, IBreakable, IInteractive{
+class TestObject : Base, IInteractive, IBreakable,  ICollectable{
     public void Collect(){}
     public void Break(){}
     public void Interact(){}
