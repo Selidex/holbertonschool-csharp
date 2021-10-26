@@ -22,10 +22,10 @@ interface ICollectable{
 }
 
 class TestObject : Base, IInteractive, IBreakable,  ICollectable{
+    public bool isCollected{ get; set;}
+    public int durability {get; set;}
     public void Collect(){}
     public void Break(){}
     public void Interact(){}
-    public bool isCollected{ get; set;}
-    public int durability {get; set;}
 }
 
