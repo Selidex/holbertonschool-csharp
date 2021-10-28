@@ -5,6 +5,7 @@ class Player{
     private float maxHp;
     private float hp;
     private string status;
+    public EventHandler<CurrentHPArgs> HPCheck;
 
     public Player(string name="Player", float maxHp=100f){
         this.name = name;
@@ -15,6 +16,7 @@ class Player{
         this.maxHp = maxHp;
         this.hp = maxHp;
         this.status = this.name + " is ready to go!";
+        this.HPCheck = this.CheckStatus;
     }
     public void PrintHealth(){
         System.Console.WriteLine("{0} has {1} / {2} health", this.name, this.hp, this.maxHp);
@@ -40,7 +42,7 @@ class Player{
             this.hp = this.maxHp;
         else
             this.hp = newHp;
-        CheckStatus();
+        this.HPCheck(this, new CurrentHPArgs(this.hp));
     }
     public float ApplyModifier(float baseValue, Modifier modifier){
         if(modifier == Modifier.Weak)
@@ -51,7 +53,7 @@ class Player{
             return baseValue;
     }
 
-    private void CheckStatus(){
+    private void CheckStatus(object sender, CurrentHPArgs e){
         if(this.hp == this.maxHp)
             this.status = this.name + " is in perfect health!";
         else if(this.hp >= (this.maxHp / 2))
@@ -81,8 +83,8 @@ public enum Modifier{
 public delegate float CalculateModifier(float baseValue, Modifier modifier);
 
 class CurrentHPArgs : EventArgs{
-    public static float currentHp;
+    public readonly float currentHp;
     public CurrentHPArgs(float newHp){
-        currentHp = newHp;
+        this.currentHp = newHp;
     }
 }
