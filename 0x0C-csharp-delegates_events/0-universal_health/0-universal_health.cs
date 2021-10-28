@@ -4,7 +4,7 @@ class Player{
     private string name;
     private float maxHp;
     private float hp;
-    public Player(string name, float maxHp=100f){
+    public Player(string name="Player", float maxHp=100f){
         this.name = name;
         if(maxHp <= 0){
             maxHp = 100f;
